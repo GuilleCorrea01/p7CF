@@ -29,7 +29,6 @@ namespace WebApplication7.Models
         [StringLength(255)]
         public string Lib_Status { get; set; }
 
-        [InverseProperty]
         public ICollection<Personajes> Personajes { get; set; }
     }
 }

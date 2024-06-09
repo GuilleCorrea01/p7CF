@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplication7.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,3 +24,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+// Conexion BD
+builder.Services.AddDbContext<MyDbContext>(options =>
+    options.UseSqlServer("name=ConnectionStrings:Connection"));
